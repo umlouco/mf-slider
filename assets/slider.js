@@ -26,7 +26,9 @@
     $modal = $(
       '<div id="' + LIGHTBOX_MODAL_ID + '" class="wpls-lightbox" role="dialog" aria-modal="true" aria-hidden="true">' +
         '<div class="wpls-lightbox__content" role="document" tabindex="-1">' +
-          '<button type="button" class="wpls-lightbox__close" aria-label="Close">&times;</button>' +
+          '<button type="button" class="wpls-lightbox__close" aria-label="Close modal">' +
+            '<span class="wpls-lightbox__close-icon" aria-hidden="true">&times;</span>' +
+          '</button>' +
           '<div class="wpls-lightbox__body"></div>' +
         '</div>' +
       '</div>'
@@ -90,9 +92,14 @@
 
     setTimeout(function () {
       initWPLightSlider($list, { startIndex: startIndex });
-      var $content = $modal.find('.wpls-lightbox__content');
-      if ($content.length) {
-        $content.trigger('focus');
+      var $closeButton = $modal.find('.wpls-lightbox__close');
+      if ($closeButton.length) {
+        $closeButton.trigger('focus');
+      } else {
+        var $content = $modal.find('.wpls-lightbox__content');
+        if ($content.length) {
+          $content.trigger('focus');
+        }
       }
     }, 0);
   }
@@ -131,8 +138,8 @@
         if (!$outer.find('.thumb-action').length) {
           $outer.append(
             '<div class="lSAction thumb-action">' +
-              '<a id="thumb-prev" class="lSPrev" aria-label="Thumbs previous"></a>' +
-              '<a id="thumb-next" class="lSNext" aria-label="Thumbs next"></a>' +
+              '<a href="#" role="button" class="lSPrev thumb-action__prev" aria-label="Thumbs previous"></a>' +
+              '<a href="#" role="button" class="lSNext thumb-action__next" aria-label="Thumbs next"></a>' +
             '</div>'
           );
         }
@@ -154,7 +161,8 @@
 
         // Scrollable thumbs (translate)
         var currentOffset = 0;
-        $outer.on('click', '#thumb-next', function () {
+        $outer.on('click', '.thumb-action__next', function (event) {
+          event.preventDefault();
           var $li = $outer.find('.lSPager li').first();
           if (!$li.length) return;
           var thumbWidth = $li.outerWidth(true);
@@ -168,7 +176,8 @@
           }
         });
 
-        $outer.on('click', '#thumb-prev', function () {
+        $outer.on('click', '.thumb-action__prev', function (event) {
+          event.preventDefault();
           var $li = $outer.find('.lSPager li').first();
           if (!$li.length) return;
           var thumbWidth = $li.outerWidth(true);

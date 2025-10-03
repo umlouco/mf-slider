@@ -68,20 +68,43 @@ body.wpls-lightbox-open {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
-  overflow: auto;
+  overflow: visible;
 }
 
 .wpls-lightbox__close {
   position: absolute;
-  top: 12px;
-  right: 16px;
+  top: -12px;
+  right: -12px;
   font-size: 28px;
+  color: #000;
+  padding: 4px;
   border: 0;
-  background: transparent;
+  background-color: #fff;
   cursor: pointer;
   line-height: 1;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+}
+
+.wpls-lightbox__close:hover,
+.wpls-lightbox__close:focus-visible {
+  background-color: #f0f0f0;
+}
+
+.wpls-lightbox__close:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.wpls-lightbox__close-icon {
+  display: block;
+  line-height: 1;
+  color: inherit;
 }
 
 .wpls-lightbox__body {
-  height: 100%;
+  max-height: calc(90vh - 40px);
+  overflow: auto;
 }
