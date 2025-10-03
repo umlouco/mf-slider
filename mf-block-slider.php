@@ -3,7 +3,7 @@
 /**
  * Plugin Name: MF Image Slider
  * Description: Image slider with light box 
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Mario Flores
  * License: GPL-2.0+
  * Text Domain: mf-block-slider
