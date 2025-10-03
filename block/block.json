@@ -1,0 +1,34 @@
+{
+  "apiVersion": 3,
+  "name": "wpls/light-slider",
+  "title": "MF Slider",
+  "category": "media",
+  "icon": "images-alt2",
+  "description": "Image slider with thumbnail gallery using LightSlider. Select images and sizes.",
+  "textdomain": "wp-light-slider",
+  "supports": { "html": false },
+  "attributes": {
+    "ids": {
+      "type": "array",
+      "items": { "type": "number" },
+      "default": []
+    },
+    "size": {
+      "type": "string",
+      "default": "large"
+    },
+    "thumbSize": {
+      "type": "string",
+      "default": "thumbnail"
+    },
+    "captions": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "wpls-block-editor-js",
+  "editorStyle": "wpls-block-editor-css",
+  "render": "file:../wp-light-slider.php",
+  "viewScript": "wpls-script",
+  "viewStyle": "wpls-style"
+}

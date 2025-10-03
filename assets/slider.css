@@ -1,0 +1,87 @@
+.wpls-demo { width: 100%; }
+.lSSlideOuter { overflow: hidden; position: relative; }
+
+.lSSlideOuter ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+.lSSlideOuter li { display: block; float: left; margin-right: 6px; cursor: pointer; }
+.lSSlideOuter img { display: block; height: auto; max-width: 100%; width: 100%; }
+
+.wpls-caption { margin: .5rem 0 0; font-size: .95rem; line-height: 1.35; }
+
+.thumb-nav { display: flex; justify-content: center; gap: 10px; margin-top: 5px; }
+.thumb-nav button { border: none; background: #ccc; padding: 6px 12px; cursor: pointer; border-radius: 4px; }
+
+/* Remove fixed height from thumbs */
+.lSPager li img { width: 100%; height: auto !important; object-fit: cover; }
+
+/* Make all li items share width evenly */
+.lSPager.lSGallery li { flex: 1 1 auto; max-width: none; }
+
+/* Ensure container uses flexbox */
+.lSPager.lSGallery { display: flex !important; }
+
+/* Prev/Next sprite */
+.lSAction > a {
+  background-image: url(https://cancerpatientseurope.org/wp-content/uploads/2025/10/controls.png) !important;
+}
+
+/* Extra container for thumb controls (overlayed on pager) */
+.lSSlideOuter .thumb-action {
+  position: absolute;
+  bottom: -5%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+  pointer-events: none;
+}
+.lSSlideOuter .thumb-action .lSPrev,
+.lSSlideOuter .thumb-action .lSNext {
+  pointer-events: auto;
+}
+
+/* Lightbox modal */
+body.wpls-lightbox-open {
+  overflow: hidden;
+}
+
+.wpls-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.wpls-lightbox.is-visible {
+  display: flex;
+}
+
+.wpls-lightbox__content {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.wpls-lightbox__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.wpls-lightbox__body {
+  height: 100%;
+}

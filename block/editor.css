@@ -1,0 +1,17 @@
+.wpls-block-placeholder {
+  border: 1px dashed #ccc;
+  padding: 16px;
+  border-radius: 6px;
+}
+.wpls-block-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+.wpls-block-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
