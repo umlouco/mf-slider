@@ -26,9 +26,9 @@
     $modal = $(
       '<div id="' + LIGHTBOX_MODAL_ID + '" class="wpls-lightbox" role="dialog" aria-modal="true" aria-hidden="true">' +
         '<div class="wpls-lightbox__content" role="document" tabindex="-1">' +
-          '<button type="button" class="wpls-lightbox__close" aria-label="Close modal">' +
+          '<a class="wpls-lightbox__close" aria-label="Close modal">' +
             '<span class="wpls-lightbox__close-icon" aria-hidden="true">&times;</span>' +
-          '</button>' +
+          '</a>' +
           '<div class="wpls-lightbox__body"></div>' +
         '</div>' +
       '</div>'
