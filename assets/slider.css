@@ -3,6 +3,9 @@
 .lSSlideOuter .lightSlider{
 	height: auto !important;
 }
+.wpls-demo .lSSlideOuter .lightSlider{
+	margin: 0;
+}
 .lSSlideOuter ul { list-style: none; padding-left: 0; margin-bottom: 0; }
 .lSSlideOuter li { display: block; float: left; margin-right: 6px; cursor: pointer; }
 .lSSlideOuter img { display: block; height: auto; max-width: 100%; width: 100%; }
